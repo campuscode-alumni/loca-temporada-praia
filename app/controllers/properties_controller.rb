@@ -1,7 +1,8 @@
 class PropertiesController < ApplicationController
   before_action :set_property, only: [:show]
 
-  def show; end
+  def show
+  end
 
   def new
     @property = Property.new
@@ -22,6 +23,26 @@ class PropertiesController < ApplicationController
     end
   end
 
+  def edit
+    @regions = Region.all
+    @property_types = PropertyType.all
+    @property = Property.find(params[:id])
+  end
+
+  def update
+    @regions = Region.all
+    @property_types = PropertyType.all
+    @property = Property.find(params[:id])
+    if @property.update(property_params)
+    flash[:success] = 'Imóvel editado com sucesso'
+    redirect_to @property
+    else
+    flash[:alert] = 'Não foi possível editar a propriedade'
+    render :edit
+    end
+    
+  end
+
   private
 
   def set_property
@@ -34,6 +55,6 @@ class PropertiesController < ApplicationController
                                      :room_quantity, :accessibility,
                                      :allow_pets, :allow_smokers,
                                      :maximum_guests, :minimum_rent,
-                                     :maximum_rent, :daily_rate)
+                                     :maximum_rent, :daily_rate, :main_photo)
   end
 end

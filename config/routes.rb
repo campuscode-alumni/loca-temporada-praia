@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root to: 'properties#new'
-  resources :properties, only: [:show, :new, :create]
+  resources :properties, only: [:show, :new, :create, :edit, :update]
   resources :property_types, only: [:show, :new, :create]
   resources :regions, only: [:show, :new, :create]
 end

@@ -21,6 +21,7 @@ feature 'Register Property' do
     fill_in 'Mínimo de diárias', with: 1
     fill_in 'Máximo de diárias', with: 20
     fill_in 'Valor da diária', with: '500.50'
+    attach_file('Inserir foto de destaque', Rails.root.join('spec', 'support', 'casa.jpg'))
     click_on 'Cadastrar'
 
     expect(page).to have_css('p', text: 'Imóvel cadastrado com sucesso')
