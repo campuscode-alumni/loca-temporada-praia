@@ -1,0 +1,8 @@
+<h1>Proposta</h1>
+<ul>
+  <li>Data de entrada: <%= @proposal.start_date.strftime("%d/%m/%Y") %></li>
+  <li>Data de saída: <%= @proposal.end_date.strftime("%d/%m/%Y") %></li>
+  <li>Motivo: <%= @proposal.rent_purpose %></li>
+  <li>Quantidade de hóspedes: <%= @proposal.total_guests %></li>
+  <li>Levarei animais: <%= @proposal.pet? ? 'Sim' : 'Não' %></li>
+</ul>

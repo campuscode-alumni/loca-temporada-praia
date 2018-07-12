@@ -17,3 +17,4 @@
   <li>Valor da diária: R$ <%= @property.daily_rate %></li>
 </ul>
 <%= link_to('Editar', edit_property_path) %>
+<%= link_to('Fazer proposta', new_property_proposal_path(@property)) %>

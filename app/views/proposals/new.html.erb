@@ -1,0 +1,31 @@
+<h1>Cadastro de proposta</h1>
+
+<ul>
+  <% @proposal.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+</ul>
+
+<%= form_for @proposal, url: property_proposals_path do |f| %>
+  <div class="form-group">
+    <%= f.label :start_date, 'Data de entrada' %>
+    <%= f.text_field :start_date %>
+  </div>
+  <div class="form-group">
+    <%= f.label :end_date, 'Data de saída' %>
+    <%= f.text_field :end_date %>
+  </div>
+  <div class="form-group">
+    <%= f.label :rent_purpose, 'Motivo da locação' %>
+    <%= f.text_field :rent_purpose %>
+  </div>
+  <div class="form-group">
+    <%= f.label :total_guests, 'Quantidade de hóspedes' %>
+    <%= f.text_field :total_guests %>
+  </div>
+  <div class="form-check">
+    <%= f.check_box :pet %>
+    <%= f.label :pet, 'Levarei animais?' %>
+  </div>
+  <%= f.submit 'Enviar proposta' %>
+<% end %>
