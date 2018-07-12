@@ -1,5 +1,9 @@
 class RegionsController < ApplicationController
   before_action :set_region, only: [:show]
+  
+
+  def index
+  end
 
   def show; end
 

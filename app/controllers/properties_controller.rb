@@ -1,6 +1,17 @@
 class PropertiesController < ApplicationController
   before_action :set_property, only: [:show]
 
+  def index
+    @regions = Region.all
+  end
+  
+
+  def search 
+    @region = Region.find(params[:region])
+    @properties = @region.properties 
+  
+  end
+
   def show
   end
 
@@ -57,4 +68,5 @@ class PropertiesController < ApplicationController
                                      :maximum_guests, :minimum_rent,
                                      :maximum_rent, :daily_rate, :main_photo)
   end
+  
 end
