@@ -10,12 +10,16 @@
   </head>
 
   <body>
-  <% if realtor_signed_in? %>
-    <%= current_realtor.email %> - <%= link_to('Sair', destroy_realtor_session_path, method: :delete) %>
-  <% else %>
-    <%= link_to('Entrar como corretor', new_realtor_session_path) %>
-  <% end %>
-
+    <% if realtor_signed_in? %>
+      <%= current_realtor.email %> - <%= link_to('Sair', destroy_realtor_session_path, method: :delete) %>
+    <% elsif user_signed_in? %>
+      <%= current_user.email %>
+      <%= link_to 'Sair', destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= link_to('Entrar como corretor', new_realtor_session_path) %>
+      <br />
+      <%= link_to 'Entrar como cliente', new_user_session_path %>
+    <% end %>
     <%= render partial: 'shared/nav_bar' %>
     <div class="container">
       <p><%= flash[:success] %></p>

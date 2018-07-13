@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
   devise_for :realtors
+  devise_for :users
+  
   root to: 'properties#index'
   get 'by_region', to: 'properties#search',as: 'search'
   resources :properties, only: [:show, :new, :create, :edit, :update] do
