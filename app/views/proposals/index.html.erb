@@ -7,12 +7,16 @@
          <h1>Nenhuma Proposta Pendente</h1>
         <% else %>
       <% @proposals.each do |propasal| %>
-          <%= propasal.start_date %>
-          <%= propasal.end_date %>
-          <%= propasal.total_guests %>
-          <%= propasal.pet %>
-          <%= propasal.rent_purpose %>
-          <%= propasal.property.title %>
+        Propostas listadas : <%= @proposals.count %>
+      <ul>
+        <li>Enviada: <%= propasal.created_at %></li>
+        <li>Data de inicio: <%= propasal.start_date %></li>
+        <li>Data final: <%= propasal.end_date %></li>
+        <li>Número de visitantes: <%= propasal.total_guests %></li>
+        <li>Permitido Animais: <%= propasal.pet %></li>
+        <li>Motivo: <%= propasal.rent_purpose %></li>
+        <li> Nome da propriedade: <%= propasal.property.title %></li>
+          </ul>
           <button>Aprovar</button>
           <button>Rejeitar</button>
     </div>
