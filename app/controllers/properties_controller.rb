@@ -1,5 +1,6 @@
 class PropertiesController < ApplicationController
   before_action :set_property, only: [:show]
+  before_action :authenticate_realtor!, only: [:new, :create, :edit, :update]
 
   def index
     @regions = Region.all
@@ -22,7 +23,7 @@ class PropertiesController < ApplicationController
   end
 
   def create
-    @property = Property.new(property_params)
+    @property = current_realtor.properties.build(property_params)
     if @property.save
       flash[:success] = 'Imóvel cadastrado com sucesso'
       redirect_to @property
@@ -66,7 +67,7 @@ class PropertiesController < ApplicationController
                                      :room_quantity, :accessibility,
                                      :allow_pets, :allow_smokers,
                                      :maximum_guests, :minimum_rent,
-                                     :maximum_rent, :daily_rate, :main_photo)
+                                     :maximum_rent, :daily_rate, :main_photo, :realtor)
   end
   
 end

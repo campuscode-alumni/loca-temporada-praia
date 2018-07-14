@@ -1,6 +1,7 @@
 class Property < ApplicationRecord
   belongs_to :property_type
   belongs_to :region
+  belongs_to :realtor
   has_attached_file :main_photo
 
   validates_attachment_content_type :main_photo, content_type: /\Aimage\/.*\z/

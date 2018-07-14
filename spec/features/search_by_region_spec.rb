@@ -2,16 +2,17 @@ require 'rails_helper'
 
 feature 'search' do
   scenario 'sucessfully' do
+    realtor = Realtor.create! email: 'realtor@email.com', password: '12345678'
     copacabana = Region.create!(name: 'Copacabana')
     leblon = Region.create!(name: 'Leblon')
     property_type = PropertyType.create(name: 'Apartamento')
     
 
     properties = Property.create!(title: 'imovel1', property_type: property_type, description: 'descricao', region: copacabana, rent_purpose: 'Casamento', area: 30, room_quantity: 3, 
-    accessibility: true, allow_pets: false, allow_smokers: false, maximum_guests: 10, minimum_rent: 2, maximum_rent: 10, daily_rate: 10, main_photo: File.new(Rails.root.join('spec', 'support', 'casa.jpg')))
+    accessibility: true, allow_pets: false, realtor: realtor, allow_smokers: false, maximum_guests: 10, minimum_rent: 2, maximum_rent: 10, daily_rate: 10, main_photo: File.new(Rails.root.join('spec', 'support', 'casa.jpg')))
 
     properties2 = Property.create!(title: 'imovel2', property_type: property_type, description: 'descricao', region: leblon, rent_purpose: 'Formatura', area: 30, room_quantity: 5, 
-    accessibility: true, allow_pets: true, allow_smokers: true, maximum_guests: 10, minimum_rent: 2, maximum_rent: 10, daily_rate: 10, main_photo: File.new(Rails.root.join('spec', 'support', 'casa.jpg')))
+    accessibility: true, allow_pets: true, realtor: realtor, allow_smokers: true, maximum_guests: 10, minimum_rent: 2, maximum_rent: 10, daily_rate: 10, main_photo: File.new(Rails.root.join('spec', 'support', 'casa.jpg')))
     
     visit root_path
     select 'Copacabana', from: 'Selecione a Região'
@@ -27,13 +28,14 @@ feature 'search' do
 
 
   scenario 'find nothing' do
+    realtor = Realtor.create! email: 'realtor@email.com', password: '12345678'
     copacabana = Region.create!(name: 'Copacabana')
     leblon = Region.create!(name: 'Leblon')
     property_type = PropertyType.create(name: 'Apartamento')
     
 
     properties = Property.create!(title: 'imovel1', property_type: property_type, description: 'descricao', region: copacabana, rent_purpose: 'Casamento', area: 30, room_quantity: 3, 
-    accessibility: true, allow_pets: false, allow_smokers: false, maximum_guests: 10, minimum_rent: 2, maximum_rent: 10, daily_rate: 10, main_photo: File.new(Rails.root.join('spec', 'support', 'casa.jpg')))
+    accessibility: true, allow_pets: false, realtor: realtor, allow_smokers: false, maximum_guests: 10, minimum_rent: 2, maximum_rent: 10, daily_rate: 10, main_photo: File.new(Rails.root.join('spec', 'support', 'casa.jpg')))
 
    
 

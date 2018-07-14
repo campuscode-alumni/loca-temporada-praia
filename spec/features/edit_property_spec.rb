@@ -3,13 +3,19 @@ require 'rails_helper'
 feature 'Edit Photo' do
   scenario 'successfully' do
     region = Region.create(name: 'Copacabana')
+    realtor = Realtor.create! email: 'realtor@email.com', password: '12345678'
     property_type = PropertyType.create(name: 'Apartamento')
     property = Property.create(title: 'Lindo apartamento 100m da praia', description: 'Um apartamento excelente para férias',
-                              property_type: property_type, region: region, rent_purpose: 'Aluguel de Temporada', 
+                              property_type: property_type, region: region, rent_purpose: 'Aluguel de Temporada', realtor: realtor,
                               area: '30', room_quantity: '2', accessibility: true, allow_pets: true, allow_smokers: true,
                               maximum_guests: '15', minimum_rent: '1', maximum_rent: 20, daily_rate: '500.5', main_photo:  File.new(Rails.root.join('spec', 'support', 'casa.jpg')))
     
+    visit root_path
 
+    click_on 'Entrar como corretor'
+    fill_in 'E-mail', with: realtor.email
+    fill_in 'Senha', with: '12345678'
+    click_on 'Entrar'
     visit property_path(property) 
     
     click_on 'Editar'
@@ -49,12 +55,17 @@ feature 'Edit Photo' do
   scenario 'and leave blank fields' do
     region = Region.create(name: 'Copacabana')
     property_type = PropertyType.create(name: 'Apartamento')
+    realtor = Realtor.create! email: 'realtor@email.com', password: '12345678'
     property = Property.create(title: 'Lindo apartamento 100m da praia', description: 'Um apartamento excelente para férias',
                               property_type: property_type, region: region, rent_purpose: 'Aluguel de Temporada', 
-                              area: '30', room_quantity: '2', accessibility: true, allow_pets: true, allow_smokers: true,
+                              area: '30', room_quantity: '2', accessibility: true, allow_pets: true, allow_smokers: true, realtor: realtor,
                               maximum_guests: '15', minimum_rent: '1', maximum_rent: 20, daily_rate: '500.5', main_photo:  File.new(Rails.root.join('spec', 'support', 'casa.jpg')))
     
-
+    visit root_path
+    click_on 'Entrar como corretor'
+    fill_in 'E-mail', with: realtor.email
+    fill_in 'Senha', with: '12345678'
+    click_on 'Entrar'
     visit property_path(property) 
     
     click_on 'Editar'
