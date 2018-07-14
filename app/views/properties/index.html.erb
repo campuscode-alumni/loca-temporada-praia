@@ -1,6 +1,8 @@
 Bem-vindo ao aluga temporada!
-
-
+ 
+ <%  if realtor_signed_in? %>
+   <%= link_to 'Ver propostas', proposals_path %>
+<% end %>
 
 <%= form_tag search_path , method: :get do %>
   <%= label_tag :region, 'Selecione a Região' %>

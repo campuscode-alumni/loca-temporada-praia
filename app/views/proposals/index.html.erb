@@ -1,0 +1,21 @@
+ 
+  
+ <%  if realtor_signed_in? %>
+    <h1>Propostas Pendentes: </h1>
+    <div>
+     <% if @proposals.empty? %>
+         <h1>Nenhuma Proposta Pendente</h1>
+        <% else %>
+      <% @proposals.each do |propasal| %>
+          <%= propasal.start_date %>
+          <%= propasal.end_date %>
+          <%= propasal.total_guests %>
+          <%= propasal.pet %>
+          <%= propasal.rent_purpose %>
+          <%= propasal.property.title %>
+          <button>Aprovar</button>
+          <button>Rejeitar</button>
+    </div>
+    <% end %>
+  <% end %>
+    <% end %> 
