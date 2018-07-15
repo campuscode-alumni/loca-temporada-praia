@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'user_sign_in' do
   scenario 'sucessfully' do
-  user = User.create!(email: 'usuario@gmail.com', password:'12345678')
+  user = User.create!(email: 'usuario@gmail.com', password:'12345678', cpf: '36106370567')
 
   visit root_path
   click_on 'Entrar como cliente'
@@ -18,7 +18,7 @@ feature 'user_sign_in' do
   end
   feature 'user_sign_out' do
     scenario 'sucessfully' do
-    user = User.create!(email: 'usuario@gmail.com', password:'12345678')
+    user = User.create!(email: 'usuario@gmail.com', password:'12345678', cpf: '36106370567')
   
     visit root_path
     click_on 'Entrar como cliente'
