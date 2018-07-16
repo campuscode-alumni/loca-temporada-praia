@@ -1,17 +1,21 @@
 class PropertiesController < ApplicationController
   before_action :set_property, only: [:show]
 
+  def all_properties
+   @properties = Property.all
+  end
+
   def index
     @regions = Region.all
     @proposals = Proposal.all
-   
-  end
-  
 
-  def search 
+  end
+
+
+  def search
     @region = Region.find(params[:region])
-    @properties = @region.properties 
-  
+    @properties = @region.properties
+
   end
 
   def show
@@ -53,7 +57,7 @@ class PropertiesController < ApplicationController
     flash[:alert] = 'Não foi possível editar a propriedade'
     render :edit
     end
-    
+
   end
 
   private
@@ -70,5 +74,5 @@ class PropertiesController < ApplicationController
                                      :maximum_guests, :minimum_rent,
                                      :maximum_rent, :daily_rate, :main_photo)
   end
-  
+
 end

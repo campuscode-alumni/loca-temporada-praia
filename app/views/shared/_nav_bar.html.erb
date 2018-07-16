@@ -9,6 +9,28 @@
       <li class="nav-item active">
         <a class="nav-link" href="<%= root_path %>">Home <span class="sr-only">(current)</span></a>
       </li>
+      <% if realtor_signed_in? %>
+      <li class="nav-item active">
+        <%= link_to 'Sair', destroy_realtor_session_path, method: :delete, class: 'nav-link' %>
+      </li>
+      <li class="nav-item active admin">
+        <%= current_realtor.email%>
+      </li>
+      <% elsif user_signed_in? %>
+      <li class="nav-item active admin">
+        <%= current_user.email%>
+      </li>
+      <li class="nav-item active">
+        <%= link_to 'Sair', destroy_user_session_path, method: :delete,class: 'nav-link' %>
+      </li>
+      <% else %>
+      <li class="nav-item active">
+        <%= link_to 'Entrar como corretor', new_realtor_session_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item active">
+        <%= link_to 'Entrar como cliente', new_user_session_path, class: 'nav-link' %>
+      </li>
+      <% end %>
       <li class="nav-item">
         <a class="nav-link" href="<%= new_property_path %>">Cadastrar imóvel</a>
       </li>

@@ -1,0 +1,16 @@
+
+
+
+<section id="pro">
+  <h1>Imóveis Cadastrados</h1>
+  <div class="propriedades">
+
+  <% @properties.each do |property| %>
+  <ul>
+    <li>
+      <%= link_to property.title, edit_property_path(property) %>
+    </li>
+  </ul>
+  <% end %>
+  </div>
+</section>

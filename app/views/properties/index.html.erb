@@ -1,14 +1,24 @@
-Bem-vindo ao aluga temporada!
- 
- <%  if realtor_signed_in? %>
-   <%= link_to 'Ver propostas', proposals_path %>
+<%  if realtor_signed_in? %>
+<section id="dash">
+  <div class="links">
+    <ul>
+      <li><%= link_to 'Ver propostas', proposals_path %></li>
+      <li><%= link_to 'Tipos de imóveis',property_type_all_property_types_path %></li>
+      <li><%= link_to 'Regiões', region_all_regions_path %></li>
+      <li><%= link_to 'Imóveis', property_all_properties_path %></li>
+      <li><%= link_to 'Cadastrar Imóvel', new_property_path %></li>
+    </ul>
+  </div>
+</section>
 <% end %>
 
-<%= form_tag search_path , method: :get do %>
-  <%= label_tag :region, 'Selecione a Região' %>
-  <%= select_tag :region, options_from_collection_for_select(@regions, :id, :name) %>
-  <%= submit_tag 'Buscar' %>
-<% end %>
-
-
-<%= link_to 'Cadastrar Imóvel', new_property_path %>
+  <section id="home">
+    <h1>Bem-vindo ao aluga temporada!</h1>
+    <div class="pesquisa">
+      <%= form_tag search_path , method: :get do %>
+        <%= label_tag :region, 'Selecione a Região' %>
+        <%= select_tag :region, options_from_collection_for_select(@regions, :id, :name) %>
+        <%= submit_tag 'Buscar' %>
+      <% end %>
+    </div>
+  </section>

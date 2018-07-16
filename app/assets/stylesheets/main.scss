@@ -1,1 +1,80 @@
 @import 'bootstrap';
+
+
+// Nav
+
+.admin{
+  margin-top: 8px;
+  color: blue;
+}
+
+// parte dos links
+#dash{
+  height: 100px;
+  margin-left: -40px;
+}
+
+.links ul li{
+  display: inline;
+  padding: 30px;
+}
+.links ul {
+  padding: 30px;
+  margin-left: 180px;
+}
+
+.links a {
+  color: black;
+  text-decoration: none;
+}
+.links a:hover {
+  color: blue;
+}
+
+// parte principal
+
+#home{
+  height: 400px;
+  // background: black;
+}
+
+h1{
+  margin-left: 250px;
+}
+.pesquisa{
+  background: white;
+  height: 100px;
+  width: 200px;
+  margin-left: 370px;
+  margin-top: 100px;
+}
+// Tipos de Imóveis
+
+#editar-tipos{
+  // background: black;
+  height: auto;
+
+}
+.lista{
+  background: white;
+  width: 300px;
+  margin-left: 350px;
+  margin-top: 40px;
+
+}
+
+#editar-tipos h2{
+  margin-left:370px;
+}
+
+// Regiões
+.lista-2 ul{
+  margin-left: 300px;
+}
+
+// Propriedades
+
+
+.propriedades ul{
+  margin-left: 250px;
+}

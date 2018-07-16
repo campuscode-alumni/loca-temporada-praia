@@ -1,6 +1,20 @@
 class RegionsController < ApplicationController
-  before_action :set_region, only: [:show]
-  
+  before_action :set_region, only: [:show,:edit,:update]
+
+  def all_regions
+    @regions = Region.all
+  end
+
+  def edit
+  end
+
+  def update
+   if @region.update(region_params)
+      redirect_to region_all_regions_path
+    else
+      render :edit
+    end
+  end
 
   def index
   end

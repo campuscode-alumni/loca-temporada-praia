@@ -1,0 +1,13 @@
+
+
+
+<section id="editar-tipos">
+  <h2>Tipos de Imóveis</h2>
+  <div class="lista">
+  <% @property_types.each do |type| %>
+      <ol>
+        <h4><%= link_to type.name, edit_property_type_path(type) %></h4>
+      </ol>
+  <% end %>
+  </div>
+</section>

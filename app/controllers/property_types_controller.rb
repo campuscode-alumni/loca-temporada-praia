@@ -1,5 +1,20 @@
 class PropertyTypesController < ApplicationController
-  before_action :set_property_type, only: [:show]
+  before_action :set_property_type, only: [:show,:edit,:update]
+
+  def all_property_types
+   @property_types = PropertyType.all
+  end
+
+  def edit
+  end
+
+  def update
+    if @property_type.update(property_type_params)
+      redirect_to property_type_all_property_types_path
+    else
+    render :edit
+  end
+  end
 
   def show; end
 
