@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'Approval proposal' do
   scenario 'successfully' do
     realtor = Realtor.create! email: 'realtor@email.com', password: '12345678'
-    user = User.create! email: 'user@email.com', password: '12345678'
+    user = User.create! email: 'user@email.com', password: '12345678', cpf: '36106370567'
     region = Region.create! name: 'Copacabana'
     property_type = PropertyType.create! name: 'Apartamento'
     property = Property.create! title: 'Lindo apartamento 100m da praia', description: 'Um apartamento excelente para férias',

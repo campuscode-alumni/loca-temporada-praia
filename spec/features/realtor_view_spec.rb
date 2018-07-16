@@ -7,7 +7,7 @@ feature 'View Proposals' do
 
     region = Region.create!(name: 'Copacabana')
     property_type = PropertyType.create!(name: 'Apartamento')
-    user = User.create!(email: 'usuario@gmail.com', password:'12345678')
+    user = User.create!(email: 'usuario@gmail.com', password:'12345678', cpf: '36106370567')
     property = Property.create!(title: 'Lindo apartamento 100m da praia', description: 'Um apartamento excelente para férias',
                                 property_type: property_type, region: region, realtor: realtor, rent_purpose: 'Aluguel de Temporada', 
                                 area: '30', room_quantity: '2', accessibility: true, allow_pets: true, allow_smokers: true,

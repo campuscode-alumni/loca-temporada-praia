@@ -9,7 +9,7 @@ feature 'Register Proposal' do
                               property_type: property_type, region: region, rent_purpose: 'Aluguel de Temporada', 
                               area: '30', room_quantity: '2', accessibility: true, allow_pets: true, allow_smokers: true, realtor: realtor,
                               maximum_guests: '15', minimum_rent: '1', maximum_rent: 20, daily_rate: '500.5', main_photo:  File.new(Rails.root.join('spec', 'support', 'casa.jpg')))
-    user = User.create!(email: 'usuario@gmail.com', password:'12345678')
+    user = User.create!(email: 'usuario@gmail.com', password:'12345678', cpf: '36106370567')
 
     visit root_path
     click_on 'Entrar como cliente'
@@ -45,7 +45,7 @@ feature 'Register Proposal' do
                               property_type: property_type, region: region, rent_purpose: 'Aluguel de Temporada', 
                               area: '30', room_quantity: '2', accessibility: true, allow_pets: true, allow_smokers: true, realtor: realtor,
                               maximum_guests: '15', minimum_rent: '1', maximum_rent: 20, daily_rate: '500.5', main_photo:  File.new(Rails.root.join('spec', 'support', 'casa.jpg')))
-    user = User.create!(email: 'usuario@gmail.com', password:'12345678')
+    user = User.create!(email: 'usuario@gmail.com', password:'12345678', cpf: '36106370567')
 
     visit root_path
     click_on 'Entrar como cliente'

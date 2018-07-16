@@ -9,6 +9,3 @@ Bem-vindo ao aluga temporada!
   <%= select_tag :region, options_from_collection_for_select(@regions, :id, :name) %>
   <%= submit_tag 'Buscar' %>
 <% end %>
-
-
-<%= link_to 'Cadastrar Imóvel', new_property_path %>
