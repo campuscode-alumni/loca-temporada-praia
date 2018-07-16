@@ -1,0 +1,6 @@
+<h1>Imoveis de <%= @realtor.email %></h1>
+<% if @properties.count == 0 %>
+<p> 'Não existem propriedades cadastradas em seu usuário.' </p>
+<% else %>
+<%= render partial: 'resume' %>
+<% end %>
