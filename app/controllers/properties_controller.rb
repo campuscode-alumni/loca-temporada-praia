@@ -4,6 +4,8 @@ class PropertiesController < ApplicationController
 
   def index
     @regions = Region.all
+    @proposals = Proposal.all
+   
   end
   
 

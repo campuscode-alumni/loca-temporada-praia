@@ -12,6 +12,7 @@
   <body>
     <% if realtor_signed_in? %>
       <%= current_realtor.email %> - <%= link_to('Sair', destroy_realtor_session_path, method: :delete) %>
+      
     <% elsif user_signed_in? %>
       <%= current_user.email %>
       <%= link_to 'Sair', destroy_user_session_path, method: :delete %>

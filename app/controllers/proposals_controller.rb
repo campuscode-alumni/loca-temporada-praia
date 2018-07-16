@@ -4,6 +4,10 @@ class ProposalsController < ApplicationController
   def new
     @proposal = Proposal.new
   end
+  
+  def index
+    @proposals = Proposal.all
+  end
 
   def create
     @proposal = current_user.proposals.build proposal_params
