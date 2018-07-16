@@ -2,11 +2,5 @@
 <% if @properties.count == 0 %>
 <p> 'Nenhum imovel encontrado para essa regiāo' </p>
 <% else %>
-  <% @properties.each do |property| %>
-    <h1><%=  property.title %></h1>
-    <h1><%=  property.property_type.name %></h1>
-    <h1><%=  property.maximum_guests %></h1>
-    <h1><%=  property.region.name %></h1>
-    <%= image_tag property.main_photo.url %> 
-  <% end %>
+<%= render partial: 'resume' %>
 <% end %>

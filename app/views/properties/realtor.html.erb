@@ -2,11 +2,5 @@
 <% if @properties.count == 0 %>
 <p> 'Não existem propriedades cadastradas em seu usuário.' </p>
 <% else %>
-  <% @properties.each do |p| %>
-    <h1><%=  p.title %></h1>
-    <h1><%=  p.property_type.name %></h1>
-    <h1><%=  p.maximum_guests %></h1>
-    <h1><%=  p.region.name %></h1>
-    <%= image_tag p.main_photo.url %> 
-  <% end %>
+<%= render partial: 'resume' %>
 <% end %>

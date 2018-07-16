@@ -29,7 +29,7 @@ feature 'Register Property' do
     fill_in 'Máximo de diárias', with: 20
     fill_in 'Valor da diária', with: '500.50'
     attach_file('Inserir foto de destaque', Rails.root.join('spec', 'support', 'casa.jpg'))
-    click_on 'Cadastrar'
+    click_on 'Salvar'
 
     expect(page).to have_css('p', text: 'Imóvel cadastrado com sucesso')
     expect(page).to have_css('h1', text: 'Lindo apartamento 100m da praia')
@@ -59,7 +59,7 @@ feature 'Register Property' do
     fill_in 'Senha', with: '12345678'
     click_on 'Entrar'
     click_on 'Cadastrar imóvel'
-    click_on 'Cadastrar'
+    click_on 'Salvar'
 
     expect(page).to have_content('Você deve preencher todos os campos')
     expect(page).to have_content('Title não pode ficar em branco')

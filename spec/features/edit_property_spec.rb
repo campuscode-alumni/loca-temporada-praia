@@ -33,7 +33,7 @@ feature 'Edit Photo' do
     fill_in 'Mínimo de diárias', with: 5
     fill_in 'Máximo de diárias', with: 30
     fill_in 'Valor da diária', with: '550'
-    click_on 'Atualizar'
+    click_on 'Salvar'
     
     expect(page).to have_css('p', text: 'Imóvel editado com sucesso')
     expect(page).to have_css('h1', text: 'Lindo apartamento 50m da praia')
@@ -81,7 +81,7 @@ feature 'Edit Photo' do
     fill_in 'Mínimo de diárias', with: ''
     fill_in 'Máximo de diárias', with: ''
     fill_in 'Valor da diária', with: ''
-    click_on 'Atualizar'
+    click_on 'Salvar'
     
 
     expect(page).to have_content('não pode ficar em branco')

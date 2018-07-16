@@ -1,0 +1,9 @@
+  <table class="caption">
+  <% @properties.each do |p| %>
+  <tr><%= image_tag p.main_photo.url %></tr>
+  <tr><%=  link_to(p.title, p) %></tr>
+  <tr><%=  p.property_type.name %></tr>
+  <tr><%=  p.maximum_guests %></tr>
+  <tr><%=  p.region.name %></tr>
+<% end %>
+</table>
