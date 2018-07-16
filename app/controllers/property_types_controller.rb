@@ -1,6 +1,6 @@
 class PropertyTypesController < ApplicationController
   before_action :set_property_type, only: [:show,:edit,:update]
-
+  before_action :authenticate_realtor!, only:[:new,:edit]
   def index
    @property_types = PropertyType.all
   end

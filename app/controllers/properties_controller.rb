@@ -1,6 +1,7 @@
 class PropertiesController < ApplicationController
   before_action :set_property, only: [:show]
-
+  before_action :authenticate_realtor!, only: [:new, :edit]
+  
   def all_properties
    @properties = Property.all
   end

@@ -1,6 +1,6 @@
 class RegionsController < ApplicationController
   before_action :set_region, only: [:show,:edit,:update]
-
+  before_action :authenticate_realtor!, only: [:new, :edit]
   def index
    @regions = Region.all
   end
