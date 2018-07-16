@@ -14,8 +14,7 @@ class ProposalsController < ApplicationController
     @proposal.property = Property.find(params[:property_id])
  
     if @proposal.save
-      flash[:notice] = 'Proposta enviada com sucesso'
-      redirect_to proposal_path(@proposal)
+      redirect_to proposal_path(@proposal), notice: 'Proposta enviada com sucesso'
     else
       flash[:alert] = 'Você deve preencher todos os campos'
       render :new
@@ -29,9 +28,8 @@ class ProposalsController < ApplicationController
 
   def approve
     @proposal = Proposal.find(params[:proposal_id])
-    @proposal.aprovado!
-    flash[:notice] = 'Proposta aprovada com sucesso!'
-    redirect_to property_path(@proposal.property)
+    @proposal.approved!
+    redirect_to property_path(@proposal.property), notice: 'Proposta aprovada com sucesso!'
   end
   
   private

@@ -58,7 +58,7 @@ require 'rails_helper'
                                         area: '30', room_quantity: '2', accessibility: true, allow_pets: true, allow_smokers: true,
                                         maximum_guests: '5', minimum_rent: '1', maximum_rent: 20, daily_rate: '350', main_photo:  File.new(Rails.root.join('spec', 'support', 'casa.jpg')))
               
-              visit root_path
+              visit by_realtor_path
 
               expect(page).not_to have_content('Propriedades')
       
