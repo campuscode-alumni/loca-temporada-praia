@@ -1,13 +1,5 @@
-<h1>Novo tipo de imóvel</h1>
+<h1>Novo tipo de Imóvel</h1>
 
-<ul>
-<% @property_type.errors.full_messages.each do |message| %>
-  <li><%= message %></li>
-<% end %>
-</ul>
 
-<%= form_for @property_type do |f| %>
-  <%= f.label :name, 'Nome' %>
-  <%= f.text_field :name %>
-  <%= f.submit 'Cadastrar' %>
-<% end %>
+<%= render partial: "property_types/shared",
+           locals: {action: "Cadastrar"} %>

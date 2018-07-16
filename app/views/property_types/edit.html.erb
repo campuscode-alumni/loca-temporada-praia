@@ -1,13 +1,4 @@
 <h1>Editar tipo imóvel</h1>
 
-<ul>
-<% @property_type.errors.full_messages.each do |message| %>
-  <li><%= message %></li>
-<% end %>
-</ul>
-
-<%= form_for @property_type do |f| %>
-  <%= f.label :name, 'Nome' %>
-  <%= f.text_field :name %>
-  <%= f.submit 'Atualizar' %>
-<% end %>
+<%= render partial: "property_types/shared",
+           locals: {action: "Atualizar"} %>

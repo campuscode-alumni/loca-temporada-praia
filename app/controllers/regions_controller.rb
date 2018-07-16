@@ -10,15 +10,13 @@ class RegionsController < ApplicationController
 
   def update
    if @region.update(region_params)
-      redirect_to region_all_regions_path
+      redirect_to region_index_path
     else
       render :edit
     end
   end
 
-  def index
-  end
-
+  
   def show; end
 
   def new

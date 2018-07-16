@@ -1,4 +1,3 @@
-<h1>Editar tipo imóvel</h1>
 
 <ul>
 <% @property_type.errors.full_messages.each do |message| %>
@@ -9,5 +8,5 @@
 <%= form_for @property_type do |f| %>
   <%= f.label :name, 'Nome' %>
   <%= f.text_field :name %>
-  <%= f.submit 'Atualizar' %>
+  <%= f.submit action %>
 <% end %>
