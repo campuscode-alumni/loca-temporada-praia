@@ -10,10 +10,10 @@ Rails.application.routes.draw do
   end
 
 
-  get 'property_type/all_property_types', to: 'property_types#all_property_types'
-  get 'region/all_regions', to: 'regions#all_regions'
+  get 'property_type/index', to: 'property_types#index'
+  get 'region/index', to: 'regions#index'
   get 'property/all_properties', to: 'properties#all_properties'
 
-  resources :property_types, only: [:show, :new, :create,:edit,:update]
+  resources :property_types, only: [:show, :new, :create,:edit,:update,:index]
   resources :regions, only: [:show, :new, :create,:edit,:update]
 end

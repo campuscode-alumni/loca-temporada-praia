@@ -11,7 +11,7 @@ feature 'Realtor edit property type' do
     fill_in 'Senha', with: '12345678'
     click_on 'Entrar'
     click_on 'Tipos de imóveis'
-    visit property_type_all_property_types_path
+    visit property_type_index_path
     click_on property_type.name
     fill_in 'Nome', with: 'Casa'
     click_on 'Atualizar'
@@ -28,7 +28,7 @@ feature 'Realtor edit property type' do
     fill_in 'Senha', with: '12345678'
     click_on 'Entrar'
     click_on 'Tipos de imóveis'
-    visit property_type_all_property_types_path
+    visit property_type_index_path
     click_on property_type.name
     fill_in 'Nome', with: ''
     click_on 'Atualizar'

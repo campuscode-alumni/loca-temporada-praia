@@ -1,12 +1,28 @@
-<h1><%=@region.name %></h1>
-<% if @properties.count == 0 %>
-<p> 'Nenhum imovel encontrado para essa regiāo' </p>
-<% else %>
-  <% @properties.each do |property| %>
-    <h1><%=  property.title %></h1>
-    <h1><%=  property.property_type.name %></h1>
-    <h1><%=  property.maximum_guests %></h1>
-    <h1><%=  property.region.name %></h1>
-    <%= image_tag property.main_photo.url %> 
-  <% end %>
+
+
+  <h1 style="margin-right:300px;margin-bottom:20px;"><%=@region.name %></h1>
+  <% if @properties.count == 0 %>
+    <p> 'Nenhum imovel encontrado para essa regiāo' </p>
+  <% else %>
+    <section id="espacos">
+        <div class="container">
+            <% @properties.each do |property| %>
+                <div class="row">
+                  <div class="col-md-7">
+                      <%= image_tag property.main_photo.url , class:'img-fluid rounded mb-3 mb-md-0' %>
+                    </div>
+                    <div class="col-md-3">
+                      <ul id="lista-busca">
+                        <li><h1><%=  property.title %></h1></li>
+                        <li><h1><%=  property.property_type.name %></h1></li>
+                        <li><h1><%=  property.maximum_guests %></h1></li>
+                        <li><h1><%=  property.region.name %></h1></li>
+                      </ul>
+                      <%= link_to 'Alugar',property, class: 'btn btn-primary'  %>
+                    </div>
+                  </div>
+                <hr>
+            <% end %>
+          </div>
+    </section>
 <% end %>

@@ -11,7 +11,7 @@ feature 'Realtor edit region' do
     fill_in 'Senha', with: '12345678'
     click_on 'Entrar'
     click_on 'Regiões'
-    visit  region_all_regions_path
+    visit  regions_index_path
     click_on region.name
     fill_in 'Nome', with: 'Copacabana'
     click_on 'Atualizar'
@@ -29,7 +29,7 @@ feature 'Realtor edit region' do
     fill_in 'Senha', with: '12345678'
     click_on 'Entrar'
     click_on 'Regiões'
-    visit  region_all_regions_path
+    visit  regions_index_path
     click_on region.name
     fill_in 'Nome', with: ''
     click_on 'Atualizar'

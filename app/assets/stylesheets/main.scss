@@ -1,5 +1,14 @@
 @import 'bootstrap';
 
+body {
+	font-family: 'Lora', serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 300;
+}
+
 
 // Nav
 
@@ -77,4 +86,33 @@ h1{
 
 .propriedades ul{
   margin-left: 250px;
+}
+// Campo de Pesquisa
+#search {
+  background: black;
+}
+.txt-pri{
+  margin-left: 450px;
+}
+// Espaco encontrado
+#lista-busca{
+  list-style: none;
+  margin-left: -300px;
+  white-space: nowrap;
+}
+
+// Show da Property
+
+#proposta-lista{
+  list-style: none;
+}
+
+#proposta-lista li{
+  font-size: 22px;
+
+}
+
+.btn-proposal{
+  margin-left: 40px;
+  margin-top: 20px;
 }
