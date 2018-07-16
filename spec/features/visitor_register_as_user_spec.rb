@@ -25,8 +25,9 @@ feature 'Visitor register as user' do
     fill_in 'Re-insira a Senha', with: '12345678'
     fill_in 'Cpf', with: ''
     click_on 'Cadastrar'
-
-    expect(page).to have_content('não pode ficar em branco')
+    within 'div#error_explanation' do
+      expect(page).to have_css('li', text: 'Cpf não pode ficar em branco')
+    end
   end
   scenario 'and must be unique' do
     User.create!(email: 'usuario@gmail.com', password:'12345678', cpf: '36106370567')
@@ -39,7 +40,9 @@ feature 'Visitor register as user' do
     fill_in 'Cpf', with: '36106370567'
     click_on 'Cadastrar'
 
-    expect(page).to have_content('Cpf Já Cadastrado')
+    within 'div#error_explanation' do
+      expect(page).to have_css('li', text:'Cpf Já Cadastrado')
+    end
   end
   scenario 'and cpf must be vaild' do
     visit root_path
@@ -49,7 +52,9 @@ feature 'Visitor register as user' do
     fill_in 'Re-insira a Senha', with: '87654321'
     fill_in 'Cpf', with: '12345678911'
     click_on 'Cadastrar'
-
-    expect(page).to have_content('12345678911 Inválido')
+    
+    within 'div#error_explanation' do
+      expect(page).to have_css('li', text: 'Cpf 12345678911 Inválido')
+    end
   end
 end
