@@ -1,13 +1,17 @@
 class PropertiesController < ApplicationController
   before_action :set_property, only: [:show]
-  before_action :authenticate_realtor!, only: [:new, :create, :edit, :update]
+  before_action :authenticate_realtor!, only: [:new, :create, :edit, :update, :realtor]
 
   def index
     @regions = Region.all
     @proposals = Proposal.all
    
   end
-  
+
+  def realtor
+    @realtor = current_realtor
+    @properties = @realtor.properties 
+  end
 
   def search 
     @region = Region.find(params[:region])

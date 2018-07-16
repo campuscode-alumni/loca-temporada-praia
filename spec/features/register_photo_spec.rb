@@ -31,7 +31,7 @@ feature 'Register Photo' do
     fill_in 'Máximo de diárias', with: 20
     fill_in 'Valor da diária', with: '500.50'
     attach_file('Inserir foto de destaque', Rails.root.join('spec', 'support', 'casa.jpg'))
-    click_on 'Cadastrar'
+    click_on 'Salvar'
 
     expect(page).to have_css("img[src*='casa.jpg']")
 
@@ -64,7 +64,7 @@ feature 'Register Photo' do
     fill_in 'Mínimo de diárias', with: 1
     fill_in 'Máximo de diárias', with: 20
     fill_in 'Valor da diária', with: '500.50'
-    click_on 'Cadastrar'
+    click_on 'Salvar'
 
     expect(page).to have_content 'não pode ficar em branco'
   end
