@@ -1,5 +1,6 @@
 class ProposalsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
+  before_action :authenticate_realtor!, only: [:approve]
 
   def new
     @proposal = Proposal.new
@@ -23,7 +24,11 @@ class ProposalsController < ApplicationController
   end
 
   def show
-    @proposal = Proposal.find(params[:id])
+    if user_signed_in? or realtor_signed_in?
+      @proposal = Proposal.find(params[:id])
+    else
+      redirect_to root_path, alert: 'Favor realizar seu login'
+    end
   end
 
   def approve
