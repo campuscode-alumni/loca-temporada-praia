@@ -1,11 +1,44 @@
-Bem-vindo ao aluga temporada!
- 
- <%  if realtor_signed_in? %>
-   <%= link_to 'Ver propostas', proposals_path %>
+<%  if realtor_signed_in? %>
+<section id="dash">
+  <div class="links">
+    <ul>
+      <li><%= link_to 'Ver propostas', proposals_path %></li>
+      <li><%= link_to 'Tipos de imóveis',property_type_index_path%></li>
+      <li><%= link_to 'Regiões', region_index_path %></li>
+      <li><%= link_to 'Imóveis', property_all_properties_path %></li>
+      <li><%= link_to 'Cadastrar Imóvel', new_property_path %></li>
+    </ul>
+  </div>
+</section>
 <% end %>
+  <section id="home">
+    <h1>Bem-vindo ao aluga temporada!</h1>
+    <div class="pesquisa">
+      <%= form_tag search_path , method: :get do %>
+        <%= label_tag :region, 'Selecione a Região' %>
+        <%= select_tag :region, options_from_collection_for_select(@regions, :id, :name) %>
+        <%= submit_tag 'Buscar' %>
+      <% end %>
+    </div>
+  </section>
 
-<%= form_tag search_path , method: :get do %>
-  <%= label_tag :region, 'Selecione a Região' %>
-  <%= select_tag :region, options_from_collection_for_select(@regions, :id, :name) %>
-  <%= submit_tag 'Buscar' %>
-<% end %>
+
+
+<section id="espacos">
+    <div class="container">
+      <h1 class="my-5 txt-pri">Nossos Espaços</h1>
+        <% @properties.each do |property| %>
+            <div class="row">
+              <div class="col-md-7">
+                  <%= image_tag property.main_photo.url , class:'img-fluid rounded mb-3 mb-md-0' %>
+                </div>
+                <div class="col-md-5">
+                  <h3><%= property.title %></h3>
+                  <p><%= property.description%></p>
+                  <%= link_to 'Alugar',property, class: 'btn btn-primary'  %>
+                </div>
+              </div>
+            <hr>
+        <% end %>
+      </div>
+</section>

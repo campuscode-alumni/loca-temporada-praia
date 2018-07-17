@@ -1,5 +1,20 @@
 class PropertyTypesController < ApplicationController
-  before_action :set_property_type, only: [:show]
+  before_action :set_property_type, only: [:show,:edit,:update]
+  before_action :authenticate_realtor!, only:[:new,:edit]
+  def index
+   @property_types = PropertyType.all
+  end
+
+  def edit
+  end
+
+  def update
+    if @property_type.update(property_type_params)
+      redirect_to property_type_index_path
+    else
+      render :edit
+    end
+  end
 
   def show; end
 

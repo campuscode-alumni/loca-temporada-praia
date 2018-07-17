@@ -2,17 +2,16 @@ require 'rails_helper'
 
 feature 'Register Property' do
   scenario 'successfully' do
+
     realtor = Realtor.create! email: 'realtor@email.com', password: '12345678'
     region = Region.create(name: 'Copacabana')
     property_type = PropertyType.create(name: 'Apartamento')
-
+    
     visit root_path
-
     click_on 'Entrar como corretor'
     fill_in 'E-mail', with: realtor.email
     fill_in 'Senha', with: '12345678'
     click_on 'Entrar'
-    
     click_on 'Cadastrar imóvel'
     fill_in 'Título', with: 'Lindo apartamento 100m da praia'
     fill_in 'Descrição', with: 'Um apartamento excelente para férias'
@@ -49,6 +48,7 @@ feature 'Register Property' do
   end
 
   scenario 'and leave blank fields' do
+    realtor = Realtor.create(email: 'realtor@alugatemporada.com', password: '12345678')
     Region.create(name: 'Copacabana')
     PropertyType.create(name: 'Apartamento')
     realtor = Realtor.create! email: 'realtor@email.com', password: '12345678'
@@ -59,8 +59,9 @@ feature 'Register Property' do
     fill_in 'Senha', with: '12345678'
     click_on 'Entrar'
     click_on 'Cadastrar imóvel'
-    click_on 'Salvar'
-
+    within 'form' do 
+      click_on 'Salvar'
+    end
     expect(page).to have_content('Você deve preencher todos os campos')
     expect(page).to have_content('Title não pode ficar em branco')
     expect(page).to have_content('Room quantity não pode ficar em branco')
