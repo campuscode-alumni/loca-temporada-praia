@@ -12,9 +12,25 @@
   <body>
     <%= render partial: 'shared/nav_bar' %>
     <div class="container">
-      <p><%= flash[:success] %></p>
-      <p><%= flash[:notice] %></p>
-      <p><%= flash[:alert] %></p>
+
+      <% if flash[:success] %>
+        <div class="alert alert-success" role="alert">
+          <p><%= flash[:success] %></p>
+        </div>
+      <% end %>
+
+      <% if flash[:notice] %>
+          <div class="alert alert-warning" role="alert">
+            <p><%= flash[:notice] %></p>
+          </div>
+      <% end %>
+        
+       <% if flash[:alert] %>
+        <div class="alert alert-danger" role="alert">
+          <p><%= flash[:alert] %></p>
+        </div>
+      <% end %>
+
       <%= yield %>
     </div>
   </body>

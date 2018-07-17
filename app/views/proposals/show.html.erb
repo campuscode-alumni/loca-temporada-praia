@@ -7,3 +7,4 @@
   <li>Levarei animais: <%= @proposal.pet? ? 'Sim' : 'Não' %></li>
 </ul>
 <br /><%= link_to('Aprovar proposta', proposal_approve_path(@proposal), method: :post) %>
+<br /><%= link_to('Rejeitar Prosposta', proposal_reject_path(@proposal), method: :post) %>

@@ -23,7 +23,11 @@
             <li>Mínimo de diárias: <%= @property.minimum_rent %></li>
             <li>Máximo de diárias: <%= @property.maximum_rent %></li>
             <li>Valor da diária: R$ <%= @property.daily_rate %></li>
-            <%= link_to 'Fazer proposta', new_property_proposal_path(@property), class:'btn btn-primary btn-proposal' %>
+            <% if user_signed_in? %>
+              <%= link_to 'Fazer proposta', new_property_proposal_path(@property), class:'btn btn-primary btn-proposal' %>
+            <% else %>
+              <%= link_to 'Editar', edit_property_path, class: 'btn btn-danger btn-editar' %>
+            <% end %>
           </ul>
 
       </div>
@@ -31,4 +35,4 @@
 </section>
 
 
-    <%= link_to 'Editar', edit_property_path, class: 'btn btn-danger' %>
+  

@@ -105,6 +105,7 @@ h1{
 
 #proposta-lista{
   list-style: none;
+  white-space: nowrap;
 }
 
 #proposta-lista li{
@@ -115,4 +116,9 @@ h1{
 .btn-proposal{
   margin-left: 40px;
   margin-top: 20px;
+}
+
+.btn-editar{
+  margin-left: 70px;
+  margin-top: 30px;
 }

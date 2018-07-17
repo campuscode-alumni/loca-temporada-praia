@@ -41,6 +41,12 @@ class ProposalsController < ApplicationController
     @proposal.approved!
     redirect_to property_path(@proposal.property), notice: 'Proposta aprovada com sucesso!'
   end
+
+  def reject
+    @proposal = Proposal.find(params[:proposal_id])
+    @proposal.declined!
+      redirect_to property_path(@proposal.property), notice: 'Proposta reprovada com sucesso!'
+  end
   
   private
 
