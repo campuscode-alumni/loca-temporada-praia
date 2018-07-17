@@ -17,6 +17,7 @@
     <% elsif user_signed_in? %>
       <h2><%= current_user.email %></h2>
       <%= link_to 'Sair', destroy_user_session_path, method: :delete %>
+      <%= link_to('Ver minhas Propostas', by_user_path) %>
     <% else %>
       <%= link_to('Entrar como corretor', new_realtor_session_path) %>
       <br />
