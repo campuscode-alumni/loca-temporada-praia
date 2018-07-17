@@ -12,7 +12,7 @@ feature 'Visitor register as user' do
     click_on 'Cadastrar'
 
     expect(current_path).to eq(root_path)
-    expect(page).to have_css('h2', text: 'user@email.com')
+    expect(page).to have_css('li', text: 'user@email.com')
     expect(page).to have_css('a', text: 'Sair')
     expect(page).not_to have_css('a', text: 'Entrar como cliente')
   end

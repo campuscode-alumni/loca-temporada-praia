@@ -11,16 +11,7 @@
 
   <body>
     <% if realtor_signed_in? %>
-      <%= current_realtor.email %> - 
-      <%= link_to('Sair', destroy_realtor_session_path, method: :delete) %> - 
       <%= link_to('Propriedades', by_realtor_path) %>
-    <% elsif user_signed_in? %>
-      <h2><%= current_user.email %></h2>
-      <%= link_to 'Sair', destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to('Entrar como corretor', new_realtor_session_path) %>
-      <br />
-      <%= link_to 'Entrar como cliente', new_user_session_path %>
     <% end %>
     <%= render partial: 'shared/nav_bar' %>
     <div class="container">

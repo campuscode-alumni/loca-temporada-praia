@@ -1,0 +1,11 @@
+
+
+<section id="editar-regioes">
+  <div class="lista-2">
+    <h1>Regiões cadastradas</h1>
+    <% @regions.each do |region| %>
+        <ul>
+          <li><h3><%= link_to region.name, edit_region_path(region) %></h3></li>
+        </ul>
+    <% end %>
+  </div>
