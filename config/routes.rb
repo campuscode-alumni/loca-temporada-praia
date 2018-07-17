@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   root to: 'properties#index'
   get 'by_region', to: 'properties#search', as: 'search'
   get 'by_realtor', to: 'properties#realtor'
+  get 'by_user', to: 'proposals#user'
   resources :properties, only: [:show, :new, :create, :edit, :update] do
-    resources :proposals, only: [:new, :create]
+  resources :proposals, only: [:new, :create]
   end
   get 'property_type/index', to: 'property_types#index'
   get 'region/index', to: 'regions#index'

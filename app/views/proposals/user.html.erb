@@ -1,0 +1,6 @@
+<h1>Propostas de <%= @user.email %></h1>
+<% if @proposals.count == 0 %>
+<p> 'Não existem propostas cadastradas em seu usuário.' </p>
+<% else %>
+<%= render partial: 'proposals' %>
+<% end %>

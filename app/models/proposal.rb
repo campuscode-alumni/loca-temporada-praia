@@ -5,6 +5,6 @@ class Proposal < ApplicationRecord
   enum status: [:pendent, :approved, :declined] 
 
 
-  validates :start_date, :end_date, :total_guests, :rent_purpose, :pet,
+  validates :start_date, :end_date, :total_guests, :rent_purpose,
             presence: { message: 'não pode ficar em branco' }
 end

@@ -1,9 +1,14 @@
 class ProposalsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :user]
   before_action :authenticate_realtor!, only: [:approve]
 
   def new
     @proposal = Proposal.new
+  end
+
+  def user
+    @user = current_user
+    @proposals = @user.proposals 
   end
   
   def index

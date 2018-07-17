@@ -11,6 +11,9 @@
       </li>
       <% if realtor_signed_in? %>
         <li class="nav-item active">
+          <%= link_to('Propriedades', by_realtor_path) %>
+        </li>
+        <li class="nav-item active">
           <%= link_to 'Sair', destroy_realtor_session_path, method: :delete, class: 'nav-link' %>
         </li>
         <li class="nav-item active admin">
@@ -28,6 +31,9 @@
       <% elsif user_signed_in? %>
         <li class="nav-item active admin">
           <%= current_user.email%>
+        </li>
+        <li class="nav-item active">
+          <%= link_to('Ver minhas Propostas', by_user_path) %>
         </li>
         <li class="nav-item active">
           <%= link_to 'Sair', destroy_user_session_path, method: :delete,class: 'nav-link' %>
