@@ -1,0 +1,24 @@
+pt-BR:
+  activerecord:
+    models:
+      property: Propriedade
+    attributes:
+      property:
+        title: Título
+        rent_purpose: Finalidade do imóvel
+        area: Área
+        room_quantity: Quantidade de cômodos
+        accessibility: Possui acessibilidade
+        allow_pets: Aceita animais
+        allow_smokers: Aceita fumantes
+        maximum_guests: Ocupação máxima
+        minimum_rent: Mínimo de diárias
+        maximum_rent: Máximo de diárias
+        daily_rate: Valor da diária
+        main_photo: Inserir foto de destaque
+        property_type_id: Tipo do imóvel
+        description: Descrição
+        region_id: Região
+
+
+

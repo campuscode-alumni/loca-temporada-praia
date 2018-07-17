@@ -6,31 +6,31 @@
 
 <%= form_for @property, html: { multipart: true } do |f| %>
   <div class="form-group">
-    <%= f.label :title, 'Título' %>
+    <%= f.label :title %>
     <%= f.text_field :title, class: 'form-control' %>
   </div>
   <div class="form-group">
-    <%= f.label :description, 'Descrição' %>
+    <%= f.label :description %>
     <%= f.text_field :description, class: 'form-control' %>
   </div>
   <div class="form-group">
-    <%= f.label :property_type_id, 'Tipo do imóvel' %>
+    <%= f.label :property_type_id %>
     <%= f.collection_select(:property_type_id, @property_types, :id, :name, {}, { class: 'form-control' }) %>
   </div>
   <div class="form-group">
-    <%= f.label :region_id, 'Região' %>
+    <%= f.label :region_id %>
     <%= f.collection_select(:region_id, @regions, :id, :name, {}, { class: 'form-control' }) %>
   </div>
   <div class="form-group">
-    <%= f.label :rent_purpose, 'Finalidade do imóvel' %>
+    <%= f.label :rent_purpose %>
     <%= f.text_field :rent_purpose, class: 'form-control' %>
   </div>
   <div class="form-group">
-    <%= f.label :area, 'Área' %>
+    <%= f.label :area %>
     <%= f.number_field :area, class: 'form-control' %>
   </div>
   <div class="form-group">
-    <%= f.label :room_quantity, 'Quantidade de cômodos' %>
+    <%= f.label :room_quantity %>
     <%= f.number_field :room_quantity, class: 'form-control' %>
   </div>
   <div class="form-check">
@@ -43,26 +43,26 @@
   </div>
   <div class="form-check">
     <%= f.check_box :allow_smokers, class: 'form-check-input' %>
-    <%= f.label :allow_smokers, 'Aceita fumantes', class: 'form-check-label' %>
+    <%= f.label :allow_smokers, class: 'form-check-label' %>
   </div>
   <div class="form-group">
-    <%= f.label :maximum_guests, 'Ocupação máxima' %>
+    <%= f.label :maximum_guests %>
     <%= f.number_field :maximum_guests, class: 'form-control' %>
   </div>
   <div class="form-group">
-    <%= f.label :minimum_rent, 'Mínimo de diárias' %>
+    <%= f.label :minimum_rent%>
     <%= f.number_field :minimum_rent, class: 'form-control' %>
   </div>
   <div class="form-group">
-    <%= f.label :maximum_rent, 'Máximo de diárias' %>
+    <%= f.label :maximum_rent %>
     <%= f.number_field :maximum_rent, class: 'form-control' %>
   </div>
   <div class="form-group">
-    <%= f.label :daily_rate, 'Valor da diária' %>
+    <%= f.label :daily_rate %>
     <%= f.number_field :daily_rate, step: 0.01, class: 'form-control' %>
   </div>
   <div class="form-group">
-    <%= f.label :main_photo, 'Inserir foto de destaque' %>
+    <%= f.label :main_photo %>
     <%= f.file_field :main_photo %>
   </div>
   <div class="form-group">

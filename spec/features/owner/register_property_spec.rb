@@ -63,11 +63,11 @@ feature 'Register Property' do
       click_on 'Salvar'
     end
     expect(page).to have_content('Você deve preencher todos os campos')
-    expect(page).to have_content('Title não pode ficar em branco')
-    expect(page).to have_content('Room quantity não pode ficar em branco')
-    expect(page).to have_content('Maximum guests não pode ficar em branco')
-    expect(page).to have_content('Minimum rent não pode ficar em branco')
-    expect(page).to have_content('Maximum rent não pode ficar em branco')
-    expect(page).to have_content('Daily rate não pode ficar em branco')
+    expect(page).to have_content('Título não pode ficar em branco')
+    expect(page).to have_content('Quantidade de cômodos não pode ficar em branco')
+    expect(page).to have_content('Ocupação máxima não pode ficar em branco')
+    expect(page).to have_content('Mínimo de diárias não pode ficar em branco')
+    expect(page).to have_content('Máximo de diárias não pode ficar em branco')
+    expect(page).to have_content('Valor da diária não pode ficar em branco')
   end
 end

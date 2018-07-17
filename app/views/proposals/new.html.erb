@@ -8,24 +8,24 @@
 
 <%= form_for @proposal, url: property_proposals_path do |f| %>
   <div class="form-group">
-    <%= f.label :start_date, 'Data de entrada' %>
+    <%= f.label :start_date %>
     <%= f.text_field :start_date %>
   </div>
   <div class="form-group">
-    <%= f.label :end_date, 'Data de saída' %>
+    <%= f.label :end_date %>
     <%= f.text_field :end_date %>
   </div>
   <div class="form-group">
-    <%= f.label :rent_purpose, 'Motivo da locação' %>
+    <%= f.label :rent_purpose %>
     <%= f.text_field :rent_purpose %>
   </div>
   <div class="form-group">
-    <%= f.label :total_guests, 'Quantidade de hóspedes' %>
+    <%= f.label :total_guests %>
     <%= f.text_field :total_guests %>
   </div>
   <div class="form-check">
     <%= f.check_box :pet %>
-    <%= f.label :pet, 'Levarei animais?' %>
+    <%= f.label :pet %>
   </div>
   <%= f.submit 'Enviar proposta' %>
 <% end %>

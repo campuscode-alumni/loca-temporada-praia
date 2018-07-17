@@ -6,7 +6,7 @@ feature 'user try edit without login' do
 
     visit edit_region_path(region)
     
-    expect(page).to have_content('You need to sign in or sign up before continuing.')
+    expect(page).to have_content('Para continuar, faça login ou registre-se.')
  
   end
  

@@ -23,7 +23,7 @@ feature 'Realtor log in' do
     fill_in 'Senha', with: '123'
     click_on 'Entrar'
 
-    expect(page).to have_content('E-mail ou senha incorretos')
+    expect(page).to have_content('Invalido Email ou senha.')
     expect(page).to have_content('Entrar')
   end
 end

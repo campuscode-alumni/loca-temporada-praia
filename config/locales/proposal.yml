@@ -1,0 +1,15 @@
+pt-BR:
+  activerecord:
+    models:
+      proposal: Proposta
+    attributes:
+      proposal:
+        start_date: Data de entrada
+        end_date: Data de saída
+        rent_purpose: Motivo da locação
+        total_guests: Quantidade de hóspedes
+        pet: Levarei animais?
+        status: 
+          pendent: Pendente
+          approved: Aprovado
+          declined: Recusado
