@@ -1,0 +1,28 @@
+<% if  @price_range.errors.any? %>
+  <ul>
+    <% @price_range.errors.full_messages.each do |message| %>
+         <div class="alert alert-danger" role="alert">
+            <li><%= message %></li>
+        </div>
+    <% end %>
+  </ul>
+<% end %>
+<% if realtor_signed_in? %>
+  <%= form_for([@property, @price_range]) do |f| %>
+
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+
+    <%= f.label :start_date %>
+    <%= f.text_field :start_date %>
+
+    <%= f.label :end_date %>
+    <%= f.text_field :end_date %>
+
+    <%= f.label :daily_rate %>
+    <%= f.text_field :daily_rate %>
+
+    <%= f.submit %>
+
+  <% end %>
+<% end %>

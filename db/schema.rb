@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_15_080149) do
+ActiveRecord::Schema.define(version: 2018_07_18_002204) do
+
+  create_table "price_ranges", force: :cascade do |t|
+    t.string "description"
+    t.date "start_date"
+    t.date "end_date"
+    t.decimal "daily_rate"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "property_id"
+    t.index ["property_id"], name: "index_price_ranges_on_property_id"
+  end
 
   create_table "properties", force: :cascade do |t|
     t.string "title"
