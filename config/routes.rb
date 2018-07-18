@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   get 'by_realtor', to: 'properties#realtor'
   get 'by_user', to: 'proposals#user'
   resources :properties, only: [:show, :new, :create, :edit, :update] do
-  resources :proposals, only: [:new, :create,]
+    resources :proposals, only: [:new, :create]
+    resources :price_ranges, only: [:show, :create, :new, :edit]
   end
   get 'property_type/index', to: 'property_types#index'
   get 'region/index', to: 'regions#index'

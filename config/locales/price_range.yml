@@ -1,0 +1,11 @@
+pt-BR:
+  activerecord:
+    models:
+      price_range: Temporada
+    attributes:
+      price_range:
+        description: Nome
+        start_date: Data de Inicio
+        end_date: Data Final
+        daily_rate: Preço da diária
+
