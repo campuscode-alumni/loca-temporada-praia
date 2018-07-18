@@ -1,4 +1,5 @@
 class CpfValidator < ActiveModel::EachValidator
+
   def validate_each(record, attribute, value)
     unless cpf_valid?(value)
       record.errors[attribute] << (options[:message] || "#{value} Inválido")

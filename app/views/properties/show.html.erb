@@ -24,13 +24,14 @@
             <li>Máximo de diárias: <%= @property.maximum_rent %></li>
             <li>Valor da diária: R$ <%= @property.daily_rate %></li>
           </ul>
+
           <% @property.price_ranges.each do |price_range| %>
             <ul>
               <h4><%= price_range.description%></h4>
               <li>Data de Inicio: <%= l price_range.start_date%> </li>
               <li>Data Final: <%= l price_range.end_date%> </li>
               <li>Preço da diária: <%= number_to_currency price_range.daily_rate %> </li>
-              
+
             </ul>
          <% end %>
           <div id="links">
@@ -41,12 +42,9 @@
               <%= link_to 'Cadastrar temporadas', new_property_price_range_path(@property) ,class: 'btn btn-success btn-editar' %>
             <% end %>
           </div>
-            
-          
+
+
 
       </div>
     </div>
 </section>
-
-
-  

@@ -15,7 +15,52 @@ h1, h2, h3, h4, h5, h6 {
 .admin{
   margin-top: 8px;
   color: blue;
+	margin-left: 370px;
 }
+.user-link{
+	margin-top: 8px;
+}
+.user-link a{
+	color: black;
+}
+.user-link a:hover{
+ text-decoration: none;
+ color: blue;
+}
+.user-current {
+	margin-top: 8px;
+  color: blue;
+	margin-left: 700px;
+}
+.user-current-2 {
+	margin-top: 8px;
+
+}
+.user-current-2 a{
+  text-decoration: none;
+	margin-left: 20px;
+	color: black;
+}
+.user-current-2 a:hover {
+	color: green;
+}
+
+.active a:hover {
+	color: blue;
+}
+.admin-2{
+  margin-top: 8px;
+  color: black;
+}
+.admin-2 a{
+  text-decoration: none;
+	color: black;
+	margin-left: 20px;
+}
+.admin-2 a:hover{
+  color: red;
+}
+
 
 // parte dos links
 #dash{
@@ -105,7 +150,6 @@ h1{
 
 #proposta-lista{
   list-style: none;
-  white-space: nowrap;
 }
 
 #proposta-lista li{
