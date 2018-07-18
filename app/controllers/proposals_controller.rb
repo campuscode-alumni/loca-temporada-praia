@@ -22,7 +22,7 @@ class ProposalsController < ApplicationController
     if @proposal.save
       redirect_to proposal_path(@proposal), notice: 'Proposta enviada com sucesso'
     else
-      flash[:alert] = 'Você deve preencher todos os campos'
+      #flash[:alert] = 'Você deve preencher todos os campos'
       render :new
     end
   
