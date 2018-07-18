@@ -63,5 +63,4 @@ require 'rails_helper'
       expect(page).to have_content('Não foi possível enviar a proposta pois o tempo mínimo não foi respeitado')
 
     end
-
-  end
+end

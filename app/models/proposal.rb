@@ -16,13 +16,13 @@ class Proposal < ApplicationRecord
   end
 
   def minimum_rent_not_allowed
-    if property.minimum_rent > count_rent_days
+    if start_date.present? && end_date.present? && property.minimum_rent > count_rent_days
       errors.add(:end_date, "Não foi possível enviar a proposta pois o tempo mínimo não foi respeitado")
     end
   end
 
   private
   def count_rent_days
-    (end_date - start_date).to_i / 86400
+    (end_date - start_date).to_i
   end
 end
