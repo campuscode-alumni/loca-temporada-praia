@@ -10,33 +10,46 @@
         <a class="nav-link" href="<%= root_path %>">Home <span class="sr-only">(current)</span></a>
       </li>
       <% if realtor_signed_in? %>
+
         <li class="nav-item active">
-          <%= link_to('Propriedades', by_realtor_path) %>
+          <%= link_to 'Propriedades', by_realtor_path, class: 'nav-link' %>
         </li>
-        <li class="nav-item active">
-          <%= link_to 'Sair', destroy_realtor_session_path, method: :delete, class: 'nav-link' %>
-        </li>
-        <li class="nav-item active admin">
-          <%= current_realtor.email%>
-        </li>
-        <li class="nav-item">
+
+        <li class="nav-item active ">
           <a class="nav-link" href="<%= new_property_path %>">Cadastrar imóvel</a>
         </li>
-        <li class="nav-item">
+
+        <li class="nav-item active">
           <a class="nav-link" href="<%= new_property_type_path %>">Cadastrar tipo de imóvel</a>
         </li>
-        <li class="nav-item">
+
+        <li class="nav-item active">
           <%= link_to "Cadastrar região", new_region_path, class: 'nav-link' %>
         </li>
-      <% elsif user_signed_in? %>
+
         <li class="nav-item active admin">
+          <%= current_realtor.email%>
+          <i class="fa fa-user fa-fw"></i>
+        </li>
+
+        <li class="nav-item active admin-2">
+          <%= link_to 'Sair', destroy_realtor_session_path, method: :delete %>
+          <i class="fa fa-sign-out fa-fw"></i>
+        </li>
+
+      <% elsif user_signed_in? %>
+
+        <li class="nav-item active user-link">
+          <%= link_to 'Ver minhas Propostas', by_user_path %>
+          <i class="fa fa-send"></i>
+        </li>
+        <li class="nav-item active user-current">
           <%= current_user.email%>
+          <i class="fa fa-user fa-fw"></i>
         </li>
-        <li class="nav-item active">
-          <%= link_to('Ver minhas Propostas', by_user_path) %>
-        </li>
-        <li class="nav-item active">
-          <%= link_to 'Sair', destroy_user_session_path, method: :delete,class: 'nav-link' %>
+        <li class="nav-item active user-current-2">
+          <%= link_to 'Sair', destroy_user_session_path, method: :delete%>
+          <i class="fa fa-sign-out fa-fw"></i>
         </li>
       <% else %>
         <li class="nav-item active">
