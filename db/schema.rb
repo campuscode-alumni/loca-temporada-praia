@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_18_002204) do
+ActiveRecord::Schema.define(version: 2018_07_18_235008) do
 
   create_table "price_ranges", force: :cascade do |t|
     t.string "description"
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 2018_07_18_002204) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.integer "status"
+    t.decimal "total_amount"
     t.index ["property_id"], name: "index_proposals_on_property_id"
     t.index ["user_id"], name: "index_proposals_on_user_id"
   end

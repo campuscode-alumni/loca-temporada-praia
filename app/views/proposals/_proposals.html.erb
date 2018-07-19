@@ -1,12 +1,13 @@
+Propostas listadas : <%= @proposals.count %>
 <% @proposals.each do |propasal| %>
-        Propostas listadas : <%= @proposals.count %>
       <ul>
         <li>Enviada: <%= propasal.created_at %></li>
-        <li>Data de inicio: <%= propasal.start_date %></li>
-        <li>Data final: <%= propasal.end_date %></li>
+        <li>Data de inicio: <%= l propasal.start_date %></li>
+        <li>Data final: <%= l propasal.end_date %></li>
         <li>Número de visitantes: <%= propasal.total_guests %></li>
         <li>Permitido Animais: <%= propasal.pet %></li>
         <li>Motivo: <%= propasal.rent_purpose %></li>
         <li> Nome da propriedade: <%= propasal.property.title %></li>
+        <li> Total da proposta: <%= number_to_currency propasal.total_amount %></li>
       </ul>
   <% end %>

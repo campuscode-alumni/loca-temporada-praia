@@ -15,7 +15,7 @@ feature 'User View Proposal' do
 
     user = User.create! email: 'user@email.com', password: '12345678', cpf: '36106370567'
 
-    proposal = Proposal.create!(user: user, start_date: '2018-04-18', end_date: '2018-04-19', total_guests: 10, pet: true, rent_purpose: 'Casamento', property: property)
+    proposal = Proposal.create!(user: user, start_date: '18/04/2018', end_date: '19/04/2018', total_guests: 10, pet: true, rent_purpose: 'Casamento', property: property)
 
     visit root_path
     click_on 'Entrar como cliente'
@@ -26,8 +26,8 @@ feature 'User View Proposal' do
 
     click_on 'Ver minhas Propostas'
 
-    expect(page).to have_content('2018-04-18')
-    expect(page).to have_content('2018-04-19')
+    expect(page).to have_content('18/04/2018')
+    expect(page).to have_content('19/04/2018')
     expect(page).to have_content('Casamento')
 
    end

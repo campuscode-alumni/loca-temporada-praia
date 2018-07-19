@@ -18,9 +18,9 @@ class ProposalsController < ApplicationController
   def create
     @proposal = current_user.proposals.build proposal_params
     @proposal.property = Property.find(params[:property_id])
- 
+    @proposal.total_amount = @proposal.proposal_price 
     if @proposal.save
-      redirect_to proposal_path(@proposal), notice: 'Proposta enviada com sucesso'
+      redirect_to by_user_path(@proposal), notice: 'Proposta enviada com sucesso'
     else
       flash[:alert] = 'Você deve preencher todos os campos'
       render :new
@@ -53,4 +53,5 @@ class ProposalsController < ApplicationController
   def proposal_params
     params.require(:proposal).permit(:start_date, :end_date, :rent_purpose, :total_guests, :pet)
   end
+
 end
