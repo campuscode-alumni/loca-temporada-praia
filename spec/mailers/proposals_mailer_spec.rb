@@ -41,7 +41,8 @@ RSpec.describe ProposalsMailer, type: :mailer do
       expect(mail.body.encoded).to match("A sua proposta de #{proposal.id} foi enviada com sucesso e está em análise pelo corretor responsável.")
       expect(mail.body.encoded).to match("Para consultar a sua proposta, clique no")
       expect(mail.body.encoded).to have_link("link", href: proposal_url(proposal))
+    
     end
-  
   end
+  
 end

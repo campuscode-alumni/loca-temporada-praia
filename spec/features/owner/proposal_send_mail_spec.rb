@@ -3,6 +3,7 @@ require 'rails_helper'
 
 feature 'Proposal send mail to user' do
   scenario 'successfully' do
+
     region = Region.create!(name: 'Copacabana')
     property_type = PropertyType.create!(name: 'Apartamento')
     realtor = Realtor.create! email: 'realtor@email.com', password: '12345678'
