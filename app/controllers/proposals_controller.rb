@@ -18,8 +18,13 @@ class ProposalsController < ApplicationController
   def create
     @proposal = current_user.proposals.build proposal_params
     @proposal.property = Property.find(params[:property_id])
+
+
     if @proposal.save
+
+      ProposalsMailer.notify_user(@proposal).deliver_now
       redirect_to by_user_path(@proposal), notice: 'Proposta enviada com sucesso'
+
     else
       #flash[:alert] = 'Você deve preencher todos os campos'
       render :new
