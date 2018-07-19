@@ -20,6 +20,7 @@ class ProposalsController < ApplicationController
     @proposal.property = Property.find(params[:property_id])
  
     if @proposal.save
+      ProposalsMailer.notify_user(current_user).delivery_now
       redirect_to proposal_path(@proposal), notice: 'Proposta enviada com sucesso'
     else
       #flash[:alert] = 'Você deve preencher todos os campos'
