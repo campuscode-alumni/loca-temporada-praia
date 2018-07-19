@@ -23,7 +23,7 @@ feature 'View Proposals' do
     expect(page).to have_content('18/04/2018')
     expect(page).to have_content('19/04/2018')
     expect(page).to have_content('10')
-    expect(page).to have_content('true')
+    expect(page).to have_content('Sim')
     expect(page).to have_content('Casamento')
 
     click_on 'Aprovar'
